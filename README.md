@@ -87,3 +87,5 @@ Code is licensed under [MIT](LICENSE). Documentation is licensed under [CC BY 4.
 ## Citation
 
 If you build on this work, see [CITATION.cff](CITATION.cff).
+
+Author: Michael Young — [ORCID 0009-0003-7442-2986](https://orcid.org/0009-0003-7442-2986)

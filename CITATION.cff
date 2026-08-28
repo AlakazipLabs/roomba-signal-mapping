@@ -5,6 +5,7 @@ type: software
 authors:
   - family-names: Young
     given-names: Michael
+    orcid: "https://orcid.org/0009-0003-7442-2986"
 repository-code: "https://github.com/AlakazipLabs/roomba-signal-mapping"
 license: MIT
 abstract: >-
