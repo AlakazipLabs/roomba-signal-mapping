@@ -1,5 +1,6 @@
 # Session/project context never publishes
 CLAUDE.md
+REVIEW_*.md
 
 # Credentials, device identifiers, house-specific data never publish
 config.toml
