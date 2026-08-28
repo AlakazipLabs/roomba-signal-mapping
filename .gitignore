@@ -1,0 +1,24 @@
+# Session/project context never publishes
+CLAUDE.md
+
+# Credentials, device identifiers, house-specific data never publish
+config.toml
+*.env
+.env*
+data/
+*.db
+*.jsonl
+*.log
+
+# House fork material (floor plans, fingerprints, coordinates) never publishes
+house/
+maps/
+fingerprints/
+
+# OS noise
+.DS_Store
+
+# Python
+venv/
+__pycache__/
+*.pyc
