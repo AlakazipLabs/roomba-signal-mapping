@@ -36,12 +36,18 @@ Anyone geeky enough to be reading this. If you run a multi-node mesh, keep old p
 
 ## Related Prior Art
 
-This project explores ideas related to U.S. Patent 10,922,396, "Signals-Based Authentication," (M. Young et al.), assigned to Bank of America Corporation.
-https://patents.google.com/patent/US10922396B2
+This project explores ideas related to two U.S. patents assigned to Bank of America Corporation:
+
+- U.S. Patent 10,922,396, "Signals-Based Authentication" (M. Young).
+  https://patents.google.com/patent/US10922396B2
+- U.S. Patent 11,645,427, "Detecting unauthorized activity related to a device by monitoring signals transmitted by the device" (M. R. Young et al.).
+  https://patents.google.com/patent/US11645427B2
+
+The shared idea in both: signals a device already emits are interpreted by a system outside the device, against a baseline it holds. That is the architectural stance of this project — all intelligence lives outside the robot.
 
 This repository is an independent personal project and is not affiliated with or endorsed by Bank of America.
 
-This project cites the patent as intellectual lineage only; it does not implement its claims.
+This project cites the patents as intellectual lineage only; it does not implement their claims.
 
 ## License
 

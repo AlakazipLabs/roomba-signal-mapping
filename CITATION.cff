@@ -23,3 +23,21 @@ references:
     institution:
       name: "Bank of America Corporation"
     year: 2021
+  - type: patent
+    number: "11,645,427"
+    title: "Detecting unauthorized activity related to a device by monitoring signals transmitted by the device"
+    authors:
+      - family-names: Young
+        given-names: Michael R.
+      - family-names: August
+        given-names: Daniel J.
+      - family-names: Castrejon
+        given-names: Tomas M.
+        name-suffix: III
+      - family-names: Scot
+        given-names: Richard Martin Seymour
+      - family-names: Slensker
+        given-names: Neal Aaron
+    institution:
+      name: "Bank of America Corporation"
+    year: 2023
