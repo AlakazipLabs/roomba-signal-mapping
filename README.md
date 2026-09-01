@@ -6,7 +6,15 @@ A methodology for mapping and locating a robot vacuum **without pose data (posit
 
 ## The problem
 
-Camera-less robot vacuums (iRobot's i-series and similar) report no position data locally. Their SLAM (Simultaneous Localization and Mapping — the algorithm that builds a map while tracking position on it) is a sealed box: sensors in, map out, cloud only. If you want to know *where the robot is* — for automation, diagnostics, or curiosity — the vendor gives you nothing.
+Camera-less robot vacuums do not *broadcast* position. For a long time that was assumed to mean position was unavailable locally at all, and this repository was started on that assumption. Their SLAM (Simultaneous Localization and Mapping — the algorithm that builds a map while tracking position on it) looked like a sealed box: sensors in, map out, cloud only.
+
+**That assumption was corrected on 2026-09-01, and the correction belongs to other people.** Working from the iRobot application's own code, Johnny H ([johnnyh1975](https://github.com/johnnyh1975/ha_roomba_plus)) established that these robots answer a position *request* sent to a local topic named `req`, replying on a topic named `data` with `xyt` (x, y and heading) referenced to a saved floor plan. It was confirmed the same day on a Roomba s9+, and in a no-coordinates form on a Braava jet m6, by [ScenicSystemsLLC](https://github.com/johnnyh1975/ha_roomba_plus/issues/102), with further testing by [Thonno](https://github.com/johnnyh1975/ha_roomba_plus/issues/112). Full record: [ha_roomba_plus issue #102](https://github.com/johnnyh1975/ha_roomba_plus/issues/102).
+
+**So: if your robot answers `req`, use it. It is a direct measurement and nothing in this repository beats it.**
+
+This methodology remains useful where that path does not reach: robots or firmware generations that do not answer, robots that answer without a position fix (the Braava jet m6 replied `type: "unknown"` with no coordinates at all), and the intervals between requests. It also covers signals the robot cannot report about itself in any case — which room it is in by radio signature, floor type by battery drain, clutter by bump density.
+
+Our own robot (Roomba i3, `daredevil` firmware) advertises no `pose` capability whatsoever, and we have not yet been able to test `req` on it. That result will be published here either way.
 
 But the robot is not silent, and neither is your house. The robot emits telemetry and radio signals; the house is full of devices that can hear them. **Individually, none of these signals localize anything. Layered and cross-checked, they may.**
 
